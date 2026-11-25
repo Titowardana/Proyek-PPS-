@@ -155,21 +155,35 @@
         <div class="absolute bottom-24 left-12 w-20 h-20 rounded-full border-2 border-blue-300/25 pointer-events-none anim-spin-slow"></div>
         <div class="absolute bottom-32 left-20 w-10 h-10 rounded-full border border-indigo-300/20 pointer-events-none anim-spin-rev"></div>
 
-        <!-- Top Right Utility Bar with Glassmorphic Badges -->
-        <div class="flex items-center justify-end gap-2.5 text-xs text-slate-500 font-medium pt-3 px-5 sm:px-7 relative z-10 flex-shrink-0">
-            <div class="stat-pill">
-                <svg class="w-3.5 h-3.5 text-blue-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                </svg>
-                <span class="text-[11px] text-slate-600 font-semibold">TA 2026 / 2027</span>
+        <!-- Top Utility Bar (Mobile Brand + Glassmorphic Badges) -->
+        <div class="flex items-center justify-between lg:justify-end gap-2.5 text-xs text-slate-500 font-medium pt-3 px-4 sm:px-7 relative z-10 flex-shrink-0">
+            <!-- Brand khusus Mobile/Tablet -->
+            <div class="flex lg:hidden items-center gap-2">
+                <div class="w-8 h-8 rounded-xl bg-white p-1 border border-slate-200/80 shadow-sm flex items-center justify-center flex-shrink-0">
+                    <img src="<?= base_url('assets/images/logo-simagang.png') ?>?v=2" alt="SIMAGANG" class="w-full h-full object-contain">
+                </div>
+                <div class="leading-tight">
+                    <span class="text-xs font-extrabold text-[#173369] tracking-tight block">SIMAGANG</span>
+                    <span class="text-[8.5px] font-semibold text-slate-500 uppercase tracking-wider block">UMRAH</span>
+                </div>
             </div>
-            <a href="#" onclick="alert('Pusat Bantuan Magang UMRAH\nEmail: magang@umrah.ac.id\nWhatsApp Helpdesk: +62 812-3456-7890'); return false;"
-               class="stat-pill hover:border-blue-300">
-                <svg class="w-3.5 h-3.5 text-blue-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/>
-                </svg>
-                <span class="text-[11px] font-semibold">Pusat bantuan</span>
-            </a>
+
+            <div class="flex items-center gap-2">
+                <div class="stat-pill">
+                    <svg class="w-3.5 h-3.5 text-blue-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                    </svg>
+                    <span class="text-[11px] text-slate-600 font-semibold">TA 2026 / 2027</span>
+                </div>
+                <a href="#" onclick="alert('Pusat Bantuan Magang UMRAH\nEmail: magang@umrah.ac.id\nWhatsApp Helpdesk: +62 812-3456-7890'); return false;"
+                   class="stat-pill hover:border-blue-300">
+                    <svg class="w-3.5 h-3.5 text-blue-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/>
+                    </svg>
+                    <span class="text-[11px] font-semibold hidden sm:inline">Pusat bantuan</span>
+                    <span class="text-[11px] font-semibold sm:hidden">Bantuan</span>
+                </a>
+            </div>
         </div>
 
         <!-- Centered Login Card with Card Entrance Animation -->

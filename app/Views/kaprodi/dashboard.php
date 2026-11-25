@@ -99,7 +99,7 @@
     </div>
 
     <!-- 3. Four Metric Cards (Interactive Scroll & Navigate) -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
 
         <!-- Card 1: Menunggu Persetujuan -->
         <div onclick="smoothScrollTo('section-antrean')"

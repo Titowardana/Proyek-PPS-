@@ -861,6 +861,17 @@
             color: #94a3b8 !important;
         }
 
+        /* Mobile Responsive Polish */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .overflow-x-auto { -webkit-overflow-scrolling: touch; }
+        @media (max-width: 639px) {
+            table th, table td {
+                padding-left: 0.75rem !important;
+                padding-right: 0.75rem !important;
+            }
+        }
+
         /* Pastikan teks body global di dark mode */
         html.dark body,
         html.dark #app,
@@ -1152,15 +1163,15 @@
     <div class="flex-1 flex flex-col min-w-0">
 
         <!-- Top Header -->
-        <header class="bg-white border-b border-[#e4ebf6] px-6 py-3.5 flex items-center justify-between sticky top-0 z-20 shadow-[0_1px_3px_rgba(23,43,77,0.06)]">
-            <div class="flex items-center gap-3">
+        <header class="bg-white border-b border-[#e4ebf6] px-3.5 sm:px-6 py-3 sm:py-3.5 flex items-center justify-between gap-2 sticky top-0 z-20 shadow-[0_1px_3px_rgba(23,43,77,0.06)]">
+            <div class="flex items-center gap-2.5 sm:gap-3 min-w-0 flex-1">
                 <!-- Mobile hamburger -->
-                <button id="toggleSidebar" class="md:hidden text-[#71819d] hover:text-[#172b4d] p-1.5 rounded-lg border border-[#e4ebf6] hover:bg-[#f7f9fc] transition">
+                <button id="toggleSidebar" class="md:hidden text-[#71819d] hover:text-[#172b4d] p-2 rounded-xl border border-[#e4ebf6] hover:bg-[#f7f9fc] transition flex-shrink-0" aria-label="Buka Menu">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
                     </svg>
                 </button>
-                <h2 class="text-[14px] font-semibold text-[#172b4d] hidden sm:block"><?= $title ?? 'SIMAGANG' ?></h2>
+                <h2 class="text-[13px] sm:text-[14px] font-semibold text-[#172b4d] truncate"><?= $title ?? 'SIMAGANG' ?></h2>
             </div>
 
             <div class="flex items-center gap-2.5 sm:gap-3">
@@ -1270,23 +1281,23 @@
         </header>
 
         <!-- Flash Messages -->
-        <div class="px-6 pt-4">
+        <div class="px-3.5 sm:px-6 pt-3 sm:pt-4">
             <?php if (session()->getFlashdata('success')): ?>
-                <div class="mb-4 p-3.5 bg-emerald-50 border border-emerald-200 border-l-4 border-l-emerald-500 text-emerald-800 text-sm rounded-xl flex items-center gap-2 shadow-sm">
+                <div class="mb-3 sm:mb-4 p-3 sm:p-3.5 bg-emerald-50 border border-emerald-200 border-l-4 border-l-emerald-500 text-emerald-800 text-xs sm:text-sm rounded-xl flex items-center gap-2 shadow-sm">
                     <svg class="w-4 h-4 text-emerald-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                    <?= session()->getFlashdata('success') ?>
+                    <span><?= session()->getFlashdata('success') ?></span>
                 </div>
             <?php endif; ?>
             <?php if (session()->getFlashdata('error')): ?>
-                <div class="mb-4 p-3.5 bg-red-50 border border-red-200 border-l-4 border-l-red-500 text-red-800 text-sm rounded-xl flex items-center gap-2 shadow-sm">
+                <div class="mb-3 sm:mb-4 p-3 sm:p-3.5 bg-red-50 border border-red-200 border-l-4 border-l-red-500 text-red-800 text-xs sm:text-sm rounded-xl flex items-center gap-2 shadow-sm">
                     <svg class="w-4 h-4 text-red-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                    <?= session()->getFlashdata('error') ?>
+                    <span><?= session()->getFlashdata('error') ?></span>
                 </div>
             <?php endif; ?>
         </div>
 
         <!-- Page Content -->
-        <main class="px-6 pb-10 pt-2 flex-1 page-enter">
+        <main class="px-3.5 sm:px-6 pb-8 sm:pb-10 pt-1.5 sm:pt-2 flex-1 page-enter">
             <?= $this->renderSection('content') ?>
         </main>
     </div>

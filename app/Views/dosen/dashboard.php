@@ -127,7 +127,7 @@
     </div>
 
     <!-- 3. Four Metric Cards Dosbem (Interactive Scroll & Navigate) -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
 
         <!-- Card 1: Tawaran Bimbingan -->
         <div onclick="smoothScrollTo('section-penugasan')"
@@ -447,7 +447,7 @@
     </div>
 
     <!-- 3. Four Metric Cards Dosen MK -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
 
         <!-- Card 1: MK Diampu -->
         <div onclick="smoothScrollTo('section-mk-diampu')"

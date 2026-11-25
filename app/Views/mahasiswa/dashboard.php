@@ -95,25 +95,25 @@ if ($activeInternshipsCount > 0) {
 }
 ?>
 
-<div class="space-y-6 pb-12 font-['Inter',_sans-serif]">
+<div class="space-y-4 sm:space-y-6 pb-8 sm:pb-12 font-['Inter',_sans-serif]">
 
     <!-- 1. Top Header & Greeting -->
-    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4">
         <div>
-            <h1 class="text-2xl sm:text-[27px] font-normal text-[#172b4d] tracking-tight">
+            <h1 class="text-xl sm:text-[27px] font-normal text-[#172b4d] tracking-tight">
                 Selamat pagi, <?= esc(explode(' ', $userName)[0] ?? $userName) ?>.
             </h1>
-            <p class="text-xs sm:text-[13px] text-[#71819d] mt-1">
+            <p class="text-xs sm:text-[13px] text-[#71819d] mt-0.5 sm:mt-1">
                 Perjalanan magang Anda, terarah dalam satu tempat.
             </p>
         </div>
 
-        <div class="flex items-center gap-4">
-            <span class="text-xs text-[#71819d] font-normal hidden sm:inline">
-                Tahun akademik <?= esc($academicYear) ?>
+        <div class="flex items-center justify-between sm:justify-end gap-3">
+            <span class="text-[11px] sm:text-xs text-[#71819d] font-normal">
+                TA <?= esc($academicYear) ?>
             </span>
             <a href="<?= base_url('mahasiswa/pendaftaran/baru') ?>"
-               class="inline-flex items-center gap-2 px-3.5 py-2.5 bg-[#2563eb] hover:bg-[#1d4ed8] text-white text-xs font-semibold rounded-[10px] border border-[#2563eb] shadow-sm transition active:scale-95">
+               class="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3.5 py-2 sm:py-2.5 bg-[#2563eb] hover:bg-[#1d4ed8] text-white text-xs font-semibold rounded-[10px] border border-[#2563eb] shadow-sm transition active:scale-95">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
                 </svg>
@@ -123,7 +123,7 @@ if ($activeInternshipsCount > 0) {
     </div>
 
     <!-- 2. Hero Student Profile Card -->
-    <div class="relative w-full rounded-[20px] p-6 sm:p-7 overflow-hidden text-white shadow-[0px_8px_24px_rgba(37,99,235,0.09)] bg-gradient-to-r from-[#173369] via-[#234b91] to-[#2563eb]">
+    <div class="relative w-full rounded-[18px] sm:rounded-[20px] p-5 sm:p-7 overflow-hidden text-white shadow-[0px_8px_24px_rgba(37,99,235,0.09)] bg-gradient-to-r from-[#173369] via-[#234b91] to-[#2563eb]">
         <!-- Watermarks SVG -->
         <div class="absolute -right-10 -bottom-10 w-96 h-48 opacity-10 pointer-events-none hidden md:block">
             <svg viewBox="0 0 400 172" fill="none" stroke="#b8deff" stroke-width="2" class="w-full h-full">
@@ -146,26 +146,26 @@ if ($activeInternshipsCount > 0) {
             <!-- Left Info Block -->
             <div class="flex-1 space-y-5">
                 <!-- User Profile Row -->
-                <div class="flex items-center gap-4">
-                    <div class="w-16 h-16 rounded-full bg-white/10 border border-white/20 p-1 flex items-center justify-center flex-shrink-0 shadow-inner">
-                        <div class="w-full h-full rounded-full bg-[#173369] text-white flex items-center justify-center font-bold text-xl uppercase">
+                <div class="flex items-start sm:items-center gap-3.5 sm:gap-4">
+                    <div class="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-white/10 border border-white/20 p-1 flex items-center justify-center flex-shrink-0 shadow-inner">
+                        <div class="w-full h-full rounded-full bg-[#173369] text-white flex items-center justify-center font-bold text-base sm:text-xl uppercase">
                             <?= strtoupper(substr($userName, 0, 1)) ?>
                         </div>
                     </div>
-                    <div class="space-y-1">
+                    <div class="space-y-1 min-w-0 flex-1">
                         <p class="text-[#b8d8fc] text-[10px] font-normal tracking-wider uppercase">
                             MAHASISWA · TA <?= esc($academicYear) ?>
                         </p>
-                        <h2 class="text-2xl sm:text-[25px] font-normal tracking-tight text-white leading-tight">
+                        <h2 class="text-lg sm:text-[25px] font-normal tracking-tight text-white leading-tight truncate">
                             <?= esc($userName) ?>
                         </h2>
-                        <p class="text-[#d3e3ff] text-xs font-normal">
+                        <p class="text-[#d3e3ff] text-[11px] sm:text-xs font-normal truncate">
                             NIM <?= esc($student['nim'] ?? '-') ?> · <?= esc($student['prodi_name'] ?? 'Informatika') ?>
                         </p>
                     </div>
-                    <div class="ml-auto hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/15 bg-white/[0.07]">
+                    <div class="ml-auto flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full border border-white/15 bg-white/[0.07] flex-shrink-0">
                         <span class="w-1.5 h-1.5 rounded-full bg-[#a7f3d0] animate-pulse"></span>
-                        <span class="text-white text-[11px] font-semibold"><?= $activeInternshipsCount ?> periode aktif</span>
+                        <span class="text-white text-[10px] sm:text-[11px] font-semibold whitespace-nowrap"><?= $activeInternshipsCount ?> aktif</span>
                     </div>
                 </div>
 
@@ -235,9 +235,9 @@ if ($activeInternshipsCount > 0) {
     </div>
 
     <!-- 3. Four Metric Cards -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
         <!-- Card 1: Total Magang -->
-        <div class="bg-white p-5 rounded-[16px] border border-[#e4ebf6] shadow-[0px_4px_16px_rgba(30,58,138,0.02)] flex flex-col justify-between">
+        <div class="bg-white p-4 sm:p-5 rounded-[14px] sm:rounded-[16px] border border-[#e4ebf6] shadow-[0px_4px_16px_rgba(30,58,138,0.02)] flex flex-col justify-between">
             <div class="flex items-center justify-between">
                 <span class="text-[#71819d] text-xs font-medium">Total Magang</span>
                 <span class="text-[#90a4c3]">
@@ -256,7 +256,7 @@ if ($activeInternshipsCount > 0) {
         </div>
 
         <!-- Card 2: Magang Aktif -->
-        <div class="bg-white p-5 rounded-[16px] border border-[#e4ebf6] shadow-[0px_4px_16px_rgba(30,58,138,0.02)] flex flex-col justify-between">
+        <div class="bg-white p-4 sm:p-5 rounded-[14px] sm:rounded-[16px] border border-[#e4ebf6] shadow-[0px_4px_16px_rgba(30,58,138,0.02)] flex flex-col justify-between">
             <div class="flex items-center justify-between">
                 <span class="text-[#71819d] text-xs font-medium">Magang Aktif</span>
                 <span class="text-[#90a4c3]">
@@ -275,7 +275,7 @@ if ($activeInternshipsCount > 0) {
         </div>
 
         <!-- Card 3: Logbook Terisi -->
-        <div class="bg-white p-5 rounded-[16px] border border-[#e4ebf6] shadow-[0px_4px_16px_rgba(30,58,138,0.02)] flex flex-col justify-between">
+        <div class="bg-white p-4 sm:p-5 rounded-[14px] sm:rounded-[16px] border border-[#e4ebf6] shadow-[0px_4px_16px_rgba(30,58,138,0.02)] flex flex-col justify-between">
             <div class="flex items-center justify-between">
                 <span class="text-[#71819d] text-xs font-medium">Logbook Terisi</span>
                 <span class="text-[#90a4c3]">
@@ -294,7 +294,7 @@ if ($activeInternshipsCount > 0) {
         </div>
 
         <!-- Card 4: Konversi MK -->
-        <div class="bg-white p-5 rounded-[16px] border border-[#e4ebf6] shadow-[0px_4px_16px_rgba(30,58,138,0.02)] flex flex-col justify-between">
+        <div class="bg-white p-4 sm:p-5 rounded-[14px] sm:rounded-[16px] border border-[#e4ebf6] shadow-[0px_4px_16px_rgba(30,58,138,0.02)] flex flex-col justify-between">
             <div class="flex items-center justify-between">
                 <span class="text-[#71819d] text-xs font-medium">Konversi MK</span>
                 <span class="text-[#90a4c3]">
@@ -333,8 +333,56 @@ if ($activeInternshipsCount > 0) {
             7 => ['title' => 'Seminar Magang', 'sub' => 'Layanan seminar'],
         ];
         ?>
-        <div class="overflow-x-auto pb-2">
-            <div class="min-w-[760px] flex items-center justify-between">
+        <!-- Mobile Vertical Stepper (Rapi tanpa scrollbar horizontal) -->
+        <div class="md:hidden space-y-0">
+            <?php foreach ($pipelineSteps as $sNum => $step): ?>
+                <?php
+                $isDone   = $sNum < $currentStep;
+                $isActive = $sNum === $currentStep;
+                ?>
+                <div class="flex items-stretch gap-3">
+                    <div class="flex flex-col items-center">
+                        <?php if ($isDone): ?>
+                            <div class="w-7 h-7 rounded-full bg-[#2563eb] text-white flex items-center justify-center flex-shrink-0 shadow-sm">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+                                </svg>
+                            </div>
+                        <?php elseif ($isActive): ?>
+                            <div class="w-7 h-7 rounded-full bg-[#2563eb] text-white border-[3px] border-[#b8d8fc] flex items-center justify-center font-semibold text-[11px] flex-shrink-0 shadow-sm">
+                                <?= $sNum ?>
+                            </div>
+                        <?php else: ?>
+                            <div class="w-7 h-7 rounded-full bg-[#f7f9fc] border border-[#e4ebf6] text-[#90a4c3] flex items-center justify-center font-normal text-[11px] flex-shrink-0">
+                                <?= $sNum ?>
+                            </div>
+                        <?php endif; ?>
+                        <?php if ($sNum < 7): ?>
+                            <div class="w-[2px] flex-1 my-1 min-h-[14px] <?= $sNum < $currentStep ? 'bg-[#2563eb]' : 'bg-[#e4ebf6]' ?>"></div>
+                        <?php endif; ?>
+                    </div>
+                    <div class="pb-3.5 pt-0.5 min-w-0 flex-1 flex items-center justify-between gap-2">
+                        <div class="min-w-0">
+                            <p class="text-xs leading-tight <?= $isActive ? 'text-[#2563eb] font-bold' : ($isDone ? 'text-[#172b4d] font-medium' : 'text-[#71819d] font-normal') ?>">
+                                <?= esc($step['title']) ?>
+                            </p>
+                            <p class="text-[11px] mt-0.5 <?= $isActive ? 'text-[#2563eb]' : 'text-[#90a4c3]' ?>">
+                                <?= esc($step['sub']) ?>
+                            </p>
+                        </div>
+                        <?php if ($isActive): ?>
+                            <span class="px-2 py-0.5 rounded-full bg-[#eff5ff] text-[#2563eb] text-[10px] font-semibold flex-shrink-0">Aktif</span>
+                        <?php elseif ($isDone): ?>
+                            <span class="text-[#2563eb] text-[10px] font-medium flex-shrink-0">Selesai</span>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+
+        <!-- Desktop & Tablet Horizontal Stepper -->
+        <div class="hidden md:block overflow-x-auto no-scrollbar pb-1">
+            <div class="min-w-[720px] flex items-start justify-between">
                 <?php foreach ($pipelineSteps as $sNum => $step): ?>
                     <?php
                     $isDone   = $sNum < $currentStep;
@@ -342,7 +390,7 @@ if ($activeInternshipsCount > 0) {
                     ?>
                     <div class="flex-1 flex flex-col items-center text-center relative group">
                         <!-- Step Connector & Badge Circle -->
-                        <div class="w-full flex items-center">
+                        <div class="w-full h-[30px] flex items-center">
                             <!-- Left Connector Line -->
                             <div class="flex-1 h-[2px] <?= $sNum === 1 ? 'invisible' : ($sNum <= $currentStep ? 'bg-[#2563eb]' : 'bg-[#e4ebf6]') ?>"></div>
                             
@@ -405,7 +453,7 @@ if ($activeInternshipsCount > 0) {
                 <?php if (!empty($actionItems)): ?>
                     <div class="divide-y divide-[#e4ebf6]">
                         <?php foreach ($actionItems as $act): ?>
-                            <div class="py-3.5 first:pt-0 last:pb-0 flex items-center justify-between gap-4">
+                            <div class="py-3.5 first:pt-0 last:pb-0 flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4">
                                 <div class="flex items-center gap-3.5 flex-1 min-w-0">
                                     <div class="w-[38px] h-[38px] rounded-[10px] <?= $act['icon_bg'] ?> flex items-center justify-center flex-shrink-0">
                                         <?= $act['icon'] ?>
@@ -419,7 +467,7 @@ if ($activeInternshipsCount > 0) {
                                         </p>
                                     </div>
                                 </div>
-                                <div class="flex items-center gap-2.5 flex-shrink-0">
+                                <div class="flex items-center justify-end gap-2 sm:gap-2.5 flex-shrink-0 pl-[52px] sm:pl-0">
                                     <span class="px-2.5 py-1 rounded-[8px] text-[11px] font-semibold <?= $act['badge_cls'] ?>">
                                         <?= esc($act['badge']) ?>
                                     </span>
